@@ -100,6 +100,7 @@ int main()
     student_data::show_id();
     t[i].display();
   }
+    t1.display();
     t2.display();
  delete t;
 }
