@@ -20,7 +20,7 @@ class student_data
 {
     string name, clas, div, dob, bg, add, tel, drive, ot, mob;
     static int id;
-    student_rollno obj;
+    
     public:
     student_data();
     void display();
@@ -28,13 +28,13 @@ class student_data
     static void show_id()
     {
         id++;
-        cout<<id;
+        cout<<id<<endl;
     }
     
 };
 student_data::student_data()
 {
-
+student_rollno obj;
     cout<<"Enter the name :";
     cin>>name;
     obj.get_roll();
@@ -59,6 +59,7 @@ student_data::student_data()
 }
 void student_data::display()
 {
+    student_rollno obj;
     cout<<"Name :"<<name<<endl;
     obj.display_roll();
     cout<<"Class :"<<clas<<endl;
@@ -84,13 +85,21 @@ student_data::student_data(student_data &s)
     this->drive=s.drive;
     this->ot=s.ot;
 }
+int  student_data::id;
 int main()
 {
+    int n;
     cout<<"Enter the data."<<endl;
-    student_data t1, t2(t1);
-    t1.display();
+    cout<<"Enter the no of student :";
+    cin>>n;
+    student_data t1;
+    student_data t2(t1);
+  student_data *t= new student_data[n];
+  for(int i=0;i<n;i++)
+  {
     student_data::show_id();
+    t[i].display();
+  }
     t2.display();
-    student_data::show_id();
-    return 0;
+ delete t;
 }
