@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-    string srt;
+    string str;
     ofstream out;
     out.open("model.txt");
     cout<<"Enter the content for the file :"<<endl;
@@ -14,7 +14,7 @@ int main()
 
     ifstream in;
     in.open("model.txt");
-    while(in.eof==0)
+    while(in.eof()==0)
     {
         getline(in,str);
         cout<<str<<endl;
